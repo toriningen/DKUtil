@@ -32,7 +32,8 @@ endif()
 # dependencies
 find_package(nlohmann_json CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
-find_package(tomlplusplus CONFIG REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(tomlplusplus REQUIRED IMPORTED_TARGET tomlplusplus)
 find_package(xbyak CONFIG REQUIRED)
 
 # header only library
@@ -125,7 +126,8 @@ source_group(
 add_subdirectory($ENV{CommonLibSSEPath} CommonLibSSE)
 find_package(nlohmann_json CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
-find_package(tomlplusplus CONFIG REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(tomlplusplus REQUIRED IMPORTED_TARGET tomlplusplus)
 find_package(xbyak CONFIG REQUIRED)
 
 # runtime
@@ -171,7 +173,7 @@ target_link_libraries(
 		CommonLibSSE::CommonLibSSE
 		nlohmann_json::nlohmann_json
 		spdlog::spdlog
-		tomlplusplus::tomlplusplus
+		PkgConfig::tomlplusplus
 		xbyak::xbyak
 )
 

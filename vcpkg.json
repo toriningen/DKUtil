@@ -5,6 +5,7 @@
     "description":  "An utilitarian library to help with SKSE plugin development.",
     "license":  "MIT",
     "dependencies":  [
+                         "pkgconf",
                          "nlohmann-json",
                          "simpleini",
                          "spdlog",
